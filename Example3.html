@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Basic Promise Function </h1>
+    <hr>
+    <script>
+
+      var connected=0
+
+
+        function promise(){
+            return new Promise((resolve,reject)=>{
+              
+                if(connected){
+                    resolve("Connection success....")
+                }
+                else{
+                    reject("Connection failed....")
+                }
+            })
+            
+        }
+
+        promise().then((msg)=>console.log("message: ",msg))
+               .catch((err)=> console.log("message:",err))
+
+       
+
+    </script>
+</body>
+</html>

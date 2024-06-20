@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Sequencial Callback Function </h1>
+    <hr>
+    <script>
+
+        function promise1(callback){
+            setTimeout(()=>{
+                console.log("task 1: get connection...")
+                callback()
+            },3000)
+        }
+
+        function promise2(callback){
+            setTimeout(()=>{
+                console.log("task 2: fettch data")
+                callback()
+            },6000)
+        }
+
+        function promise3(callback){
+            setTimeout(()=>{
+                console.log("task 3: display data")
+                callback()
+            },1000)
+        }
+
+        promise1(()=>{
+            promise2(()=>{
+                promise3(()=>{
+                    console.log("transaction success...")
+                })
+            })
+        })
+       
+
+    </script>
+</body>
+</html>
